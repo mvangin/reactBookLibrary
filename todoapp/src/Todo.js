@@ -5,7 +5,9 @@ function Todo(props) {
     const text = props.isRead ? "read" : "not read"
 
     return(
-        <div> {props.title} {text} id={props.id}</div>
+        <div> 
+            {props.title} <button onClick={() => {return props.handleRead(props.id)}}> {text} </button>   
+        </div>
     )
 }
 
