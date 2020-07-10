@@ -1,18 +1,15 @@
 
 const DataManager = (() => {
 
-let todos = [
-    {title: "note 1", isRead: false, id:0},
-    {title: "note 2", isRead: true, id:1}, 
-    {title: "note 3", isRead: false, id:2}
+let books = [
+    {title: "Book 1", isRead: false},
+    {title: "Book 2", isRead: true}, 
+    {title: "Book 3", isRead: false}
 ]
 
-//handle delete here thats passed down to Todo. 
-//handle isread here that is passed down to Form
 
 
-
-return {todos}
+return {books}
 
 })();
 
