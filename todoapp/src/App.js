@@ -18,11 +18,13 @@ class App extends React.Component {
     this.addBook = this.addBook.bind(this)
   }
 
-  addBook(newBook) {
+  addBook(newBook) {    
       this.setState((prevState) => (
       {booksData : [...prevState.booksData, newBook]}
       ))
   }
+
+
   
   //handle delete here thats passed down to Todo. use map and key and delete and key index
   handleRead(index) {
@@ -40,8 +42,9 @@ class App extends React.Component {
     this.setState({ booksData: newBooks })
     console.log(this.state.booksData)
   }
-
+  
   render() {
+
     return (
       <>
        <div id="body">
@@ -53,5 +56,9 @@ class App extends React.Component {
     );
   }
 }
+
+
+
+
 
 export default App;
