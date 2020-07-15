@@ -4,7 +4,7 @@ import checkmark from "./images/checkmark.png"
 
 
 function Book(props) {
-    const text = props.isRead ? "read" : <img id="checkmark" src={checkmark}/>
+    const text = props.isRead ? <img id="checkmark" src={checkmark} alt="checkmark"/> : "Not Yet" 
 
     return(
         <div id="book"> 
