@@ -20,6 +20,11 @@ class Form extends React.Component {
 
     handleSubmit(e){
         e.preventDefault()
+        if (this.state.bookTitle === "" || this.state.author === "" || this.state.genre === ""
+     || this.state.pagse === "") {
+            return
+        } 
+
         const newBook = {title : this.state.bookTitle, author: this.state.author, 
         genre: this.state.genre, pages: this.state.pages, isRead: false}
         this.props.addBook(newBook)
@@ -27,6 +32,7 @@ class Form extends React.Component {
         this.setState({author : ""})
         this.setState({genre : ""})
         this.setState({pages : ""})
+        this.setState({formDisplay: false})
     
     }
 
@@ -42,7 +48,7 @@ class Form extends React.Component {
     render() {
         return (
             <>
-            <button className="bookButton" onClick={this.handleDisplay}> New Book </button>
+            <button className="bookButton" onClick={this.handleDisplay}> Add New Book </button>
             
             <div id={this.state.formDisplay ? "formDisplayActive" : "formDisplayHidden"} >
 
@@ -50,19 +56,19 @@ class Form extends React.Component {
                 
                 <ul id="inputList">
                     <li>
-                    <input className="formItem" type="text" placeholder="Title" name="bookTitle" value={this.state.bookTitle} onChange={this.handleChange} />
+                    <input className="formItem" type="text" placeholder="Title" name="bookTitle" value={this.state.bookTitle} onChange={this.handleChange} required />
                     </li>
 
                     <li>
-                    <input className="formItem" type="text" placeholder="Author" name="author" value={this.state.author} onChange={this.handleChange} />
+                    <input className="formItem" type="text" placeholder="Author" name="author" value={this.state.author} onChange={this.handleChange} required />
                     </li>
 
                     <li>
-                    <input className="formItem" type="text" placeholder="Genre" name="genre" value={this.state.genre} onChange={this.handleChange} />
+                    <input className="formItem" type="text" placeholder="Genre" name="genre" value={this.state.genre} onChange={this.handleChange} required />
                     </li>
 
                     <li>
-                    <input className="formItem" type="text" placeholder="Pages" name="pages" value={this.state.pages} onChange={this.handleChange} />
+                    <input className="formItem" type="number" placeholder="Pages" name="pages" value={this.state.pages} onChange={this.handleChange} required/>
                     </li>
 
                     <button type="submit" className="bookButton"> Submit Note</button>

@@ -31,3 +31,12 @@
     font-size: 20px;
 }
 
+#checkmark {
+    margin-bottom: -6px;
+    margin-left: 6px;
+}
+
+#buttonDiv {
+    text-align: center;
+    margin-top: 20px;
+}

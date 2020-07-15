@@ -44,10 +44,10 @@ class App extends React.Component {
   render() {
     return (
       <>
-      <Header />
-      <div id="body">
-        <BookList handleRead={this.handleRead} handleDelete={this.handleDelete} booksData={this.state.booksData}/>
+       <div id="body">
+        <Header />
         <Form addBook={this.addBook}/>
+        <BookList handleRead={this.handleRead} handleDelete={this.handleDelete} booksData={this.state.booksData}/>
       </div>
       </>
     );
