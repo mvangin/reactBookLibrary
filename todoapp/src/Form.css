@@ -1,0 +1,62 @@
+.bookButton {
+    padding: 1rem;
+    font-size: 25px;
+    border: solid black 1px;
+    border-radius: 5px;
+    background: rgba(5, 71, 68, 0.705);
+    color: white;
+    }
+
+
+#formDisplayHidden {
+    display: none
+}
+
+#formDisplayActive {
+    display: flex;
+    width : 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 40;
+}
+
+
+#form{
+    border: solid rgb(121, 113, 113) 5px;
+    border-radius: 10px;
+    background-color: white;
+    position:relative;
+}
+    
+
+
+.closeForm {
+    position: absolute;
+    cursor: pointer;
+    right: -35px;
+    top: -55px;
+    padding:5px;
+    font-size: 60px;
+    color: white;
+    background: none;
+    transform: rotate(45deg)
+
+}
+
+#inputList {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+    padding: 2rem 3rem;
+}
+
+.formItem {
+    padding: 20px;
+    margin-bottom: 12px;
+    text-align: left;
+}

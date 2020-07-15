@@ -1,0 +1,33 @@
+#book {
+    border: solid black 2px;
+    border-radius: 5px;
+    text-align: left;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    overflow: auto;
+    background: white;
+    font-size: 20px;
+    position: relative;
+    }
+
+
+#deleteButton {
+    background: rgba(255, 0, 0, 0.699);
+    color: white;
+    padding: 8px 8px;
+    border: solid black 1px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#readButton {
+    background: grey;
+    border: solid black 1px;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 8px 8px;
+    margin-right: 5px;
+    font-size: 20px;
+}
+

@@ -3,6 +3,8 @@ import './App.css';
 import BookList from "./BookList"
 import Form from "./Form"
 import DataManager from "./DataManager"
+import Header from "./Header"
+import "./App.css"
 
 class App extends React.Component {
 
@@ -41,10 +43,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
+      <Header />
+      <div id="body">
         <BookList handleRead={this.handleRead} handleDelete={this.handleDelete} booksData={this.state.booksData}/>
         <Form addBook={this.addBook}/>
       </div>
+      </>
     );
   }
 }
