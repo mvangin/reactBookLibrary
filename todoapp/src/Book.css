@@ -25,6 +25,8 @@
     border: solid black 1px;
     border-radius: 5px;
     font-size: 20px;
+    cursor: pointer;
+
 }
 
 #readButton {
@@ -35,6 +37,8 @@
     padding: 8px 8px;
     margin-right: 5px;
     font-size: 20px;
+    cursor: pointer;
+
 }
 
 #checkmark {

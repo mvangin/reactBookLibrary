@@ -41,8 +41,7 @@ class Form extends React.Component {
     }
 
     handleDisplay(){
-        this.setState({formDisplay: true})
-
+        this.setState(prevState => ({formDisplay: !prevState.formDisplay}))
     }
 
     render() {
@@ -55,6 +54,9 @@ class Form extends React.Component {
             <form id="form" onSubmit={this.handleSubmit}>
                 
                 <ul id="inputList">
+                    <div id="cancelForm" onClick={this.handleDisplay}>
+                        +
+                    </div>
                     <li>
                     <input className="formItem" type="text" placeholder="Title" name="bookTitle" value={this.state.bookTitle} onChange={this.handleChange} required />
                     </li>

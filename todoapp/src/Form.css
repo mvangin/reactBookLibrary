@@ -5,6 +5,8 @@
     border-radius: 5px;
     background: rgba(5, 71, 68, 0.705);
     color: white;
+    cursor: pointer;
+
     }
 
 
@@ -25,6 +27,16 @@
     z-index: 40;
 }
 
+#cancelForm{
+    font-size: 80px;
+    color: white;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 320px;
+    top: -55px;
+    cursor: pointer;
+
+}
 
 #form{
     border: solid rgb(121, 113, 113) 5px;
@@ -60,3 +72,4 @@
     margin-bottom: 12px;
     text-align: left;
 }
+
