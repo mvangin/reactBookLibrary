@@ -6,10 +6,6 @@ import Header from "./Header"
 import "./App.css"
 
 class App extends React.Component {
-
-
-
-
   constructor() {
     super()
     if (localStorage.getItem("bookslist")) {
@@ -58,6 +54,8 @@ class App extends React.Component {
   updateLocalStorage(newData){
     localStorage.setItem('bookslist', JSON.stringify(newData))
   }
+
+  
 
   render() {
 

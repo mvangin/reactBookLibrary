@@ -8,7 +8,7 @@ function Book(props) {
 
     return(
         <div id="book"> 
-            <b>{props.title}</b> <br /> Author: {props.author} <br /> Genre: {props.genre} <br/> Pages: {props.pages}<br /> Finished? {text} <br /> 
+            <b id="title">{props.title} </b> <br /> Author: {props.author} <br /> Genre: {props.genre} <br/> Pages: {props.pages}<br /> Finished? {text} <br /> 
             <div id="buttonDiv">
             <button id="readButton" onClick={() => {return props.handleRead(props.index)}}> Read Status </button>   
             <button id="deleteButton" onClick={()=> {return props.handleDelete(props.index) }}> delete </button>

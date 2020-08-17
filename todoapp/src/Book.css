@@ -2,6 +2,7 @@
     border: solid black 2px;
     border-radius: 5px;
     text-align: left;
+    padding-top: 10px;
     margin-left: 10px;
     padding-left: 10px;
     padding-bottom: 10px;
@@ -9,8 +10,13 @@
     background: white;
     font-size: 20px;
     position: relative;
+    min-width: 150px;
     }
 
+
+#title {
+    font-size: 1.5rem;
+}
 
 #deleteButton {
     background: rgba(255, 0, 0, 0.699);
