@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/mvangin/reactBookLibrary.git",
+  "homepage": "https://github.com/mvangin/reactBookLibrary",
   "name": "todoapp",
   "version": "0.1.0",
   "private": true,
@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
