@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/mvangin/reactBookLibrary.git/static/css/main.3e2e84a5.chunk.css",
-    "main.js": "/mvangin/reactBookLibrary.git/static/js/main.200b81a0.chunk.js",
-    "main.js.map": "/mvangin/reactBookLibrary.git/static/js/main.200b81a0.chunk.js.map",
-    "runtime-main.js": "/mvangin/reactBookLibrary.git/static/js/runtime-main.308f9914.js",
-    "runtime-main.js.map": "/mvangin/reactBookLibrary.git/static/js/runtime-main.308f9914.js.map",
-    "static/js/2.ca59a247.chunk.js": "/mvangin/reactBookLibrary.git/static/js/2.ca59a247.chunk.js",
-    "static/js/2.ca59a247.chunk.js.map": "/mvangin/reactBookLibrary.git/static/js/2.ca59a247.chunk.js.map",
-    "index.html": "/mvangin/reactBookLibrary.git/index.html",
-    "precache-manifest.5d04f313176970da8bba21893a3d8bc0.js": "/mvangin/reactBookLibrary.git/precache-manifest.5d04f313176970da8bba21893a3d8bc0.js",
-    "service-worker.js": "/mvangin/reactBookLibrary.git/service-worker.js",
-    "static/css/main.3e2e84a5.chunk.css.map": "/mvangin/reactBookLibrary.git/static/css/main.3e2e84a5.chunk.css.map",
-    "static/js/2.ca59a247.chunk.js.LICENSE.txt": "/mvangin/reactBookLibrary.git/static/js/2.ca59a247.chunk.js.LICENSE.txt"
+    "main.css": "/mvangin/reactTodoApp_capstone.git/static/css/main.3e2e84a5.chunk.css",
+    "main.js": "/mvangin/reactTodoApp_capstone.git/static/js/main.200b81a0.chunk.js",
+    "main.js.map": "/mvangin/reactTodoApp_capstone.git/static/js/main.200b81a0.chunk.js.map",
+    "runtime-main.js": "/mvangin/reactTodoApp_capstone.git/static/js/runtime-main.36fc9774.js",
+    "runtime-main.js.map": "/mvangin/reactTodoApp_capstone.git/static/js/runtime-main.36fc9774.js.map",
+    "static/js/2.ca59a247.chunk.js": "/mvangin/reactTodoApp_capstone.git/static/js/2.ca59a247.chunk.js",
+    "static/js/2.ca59a247.chunk.js.map": "/mvangin/reactTodoApp_capstone.git/static/js/2.ca59a247.chunk.js.map",
+    "index.html": "/mvangin/reactTodoApp_capstone.git/index.html",
+    "precache-manifest.ce858f598f7383d25b9e94c4c414cffc.js": "/mvangin/reactTodoApp_capstone.git/precache-manifest.ce858f598f7383d25b9e94c4c414cffc.js",
+    "service-worker.js": "/mvangin/reactTodoApp_capstone.git/service-worker.js",
+    "static/css/main.3e2e84a5.chunk.css.map": "/mvangin/reactTodoApp_capstone.git/static/css/main.3e2e84a5.chunk.css.map",
+    "static/js/2.ca59a247.chunk.js.LICENSE.txt": "/mvangin/reactTodoApp_capstone.git/static/js/2.ca59a247.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.308f9914.js",
+    "static/js/runtime-main.36fc9774.js",
     "static/js/2.ca59a247.chunk.js",
     "static/css/main.3e2e84a5.chunk.css",
     "static/js/main.200b81a0.chunk.js"
