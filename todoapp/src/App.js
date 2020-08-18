@@ -1,75 +1,89 @@
-import React from 'react';
+import React, { setState, useState, useEffect } from 'react';
 import './App.css';
 import BookList from "./BookList"
 import Form from "./Form"
 import Header from "./Header"
 import "./App.css"
+import db from "./firebase"
+import firebase from "firebase"
 
-class App extends React.Component {
-  constructor() {
-    super()
-    if (localStorage.getItem("bookslist")) {
-      let booksList = JSON.parse(localStorage.getItem('bookslist'))
-      this.state = {
-        booksData: booksList
-      }
-    } else {
-      this.state = { booksData: [] }
-    }
+function App() {
 
-    this.handleRead = this.handleRead.bind(this)
-    this.handleDelete = this.handleDelete.bind(this)
-    this.addBook = this.addBook.bind(this)
-  }
+  const [booksData, setBooksData] = useState([]);
 
-  addBook(newBook) {
-    let newData = [...this.state.booksData, newBook]
-    this.updateLocalStorage(newData)
+  //useEffect(() => {
+  // if (localStorage.getItem("bookslist")) {
+  //  let booksList = JSON.parse(localStorage.getItem('bookslist'))
+  // setBooksData(booksList);
+  //}
+  //}, [])
 
-    this.setState((prevState) => (
-      { booksData: [...prevState.booksData, newBook] }
-    ))
+  useEffect(() => {
+    //this code here fires when app loads
+    db.collection('bookLibrary').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
+      const data = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+      console.log(data)
+      setBooksData(data)
+    })
+    //setBooksData(snapshot.docs.map(doc => doc.data().todo))
+  }, [])
+
+  function addBook(newBook) {
+    let newData = [...booksData, newBook]
+    db.collection('bookLibrary').add(
+      {
+        ...newBook, timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      })
+
+    //updateLocalStorage(newData)
+    //setBooksData((prevState) => ([...prevState, newBook]))
   }
 
   //handle delete here thats passed down to Todo. use map and key and delete and key index
-  handleRead(index) {
-    const updatedBooks = this.state.booksData
-    updatedBooks[index].isRead = this.state.booksData[index].isRead ? false : true;
+  function handleRead(index) {
+    const updatedBooks = booksData.map((item, Itemindex) => {
+      if (Itemindex === index) {
+        //item.isRead = !item.isRead
+        db.collection('bookLibrary').doc(item.id).update({isRead: !item.isRead})
+        return item
+      } else {
+        return item
 
-    this.updateLocalStorage(updatedBooks)
+      }
+    })
 
-    this.setState({ booksData: updatedBooks })
+    //setBooksData(updatedBooks)
+    //updateLocalStorage(updatedBooks)
   }
 
-  handleDelete(index) {
-
-    const newBooks = this.state.booksData.filter((item, Itemindex) => (index !== Itemindex))
-
-    this.updateLocalStorage(newBooks)
-
-    this.setState({ booksData: newBooks })
-    console.log(this.state.booksData)
+  function handleDelete(index) {
+    const newBooks = booksData.filter((item, Itemindex) => {
+      if (index !== Itemindex) {
+        return item
+      } else {
+        db.collection('bookLibrary').doc(item.id).delete() 
+      } 
+    })
+    //updateLocalStorage(newBooks)
+    //setBooksData(newBooks)
   }
 
-  updateLocalStorage(newData){
+  function updateLocalStorage(newData) {
     localStorage.setItem('bookslist', JSON.stringify(newData))
   }
 
-  
 
-  render() {
-
-    return (
-      <>
-        <div id="body">
-          <Header />
-          <Form addBook={this.addBook} />
-          <BookList handleRead={this.handleRead} handleDelete={this.handleDelete} booksData={this.state.booksData} />
-        </div>
-      </>
-    );
-  }
+  return (
+    <>
+      <div id="body">
+        <Header />
+        <Form addBook={addBook} />
+        <BookList handleRead={handleRead} handleDelete={handleDelete} booksData={booksData} />
+      </div>
+    </>
+  );
 }
+
 
 
 

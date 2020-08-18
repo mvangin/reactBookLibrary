@@ -6,7 +6,7 @@ class Form extends React.Component {
     constructor() {
         super()
         this.state = {
-            bookTitle: "",
+            title: "",
             author: "",
             genre: "",
             pages: "",
@@ -20,13 +20,13 @@ class Form extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        if (this.state.bookTitle === "" || this.state.author === "" || this.state.genre === ""
+        if (this.state.title === "" || this.state.author === "" || this.state.genre === ""
             || this.state.pagse === "") {
             return
         }
 
         const newBook = {
-            title: this.state.bookTitle, author: this.state.author,
+            title: this.state.title, author: this.state.author,
             genre: this.state.genre, pages: this.state.pages, isRead: false
         }
         this.props.addBook(newBook)
@@ -43,10 +43,11 @@ class Form extends React.Component {
     }
 
     clearForm() {
-        this.setState({ bookTitle: "" })
+        this.setState({ title: "" })
         this.setState({ author: "" })
         this.setState({ genre: "" })
         this.setState({ pages: "" })
+        this.setState({ isRead: false })
     }
 
     render() {
@@ -63,7 +64,7 @@ class Form extends React.Component {
                                 +
                     </div>
                             <li>
-                                <input className="formItem" type="text" placeholder="Title" name="bookTitle" value={this.state.bookTitle} onChange={this.handleChange} required />
+                                <input className="formItem" type="text" placeholder="Title" name="title" value={this.state.title} onChange={this.handleChange} required />
                             </li>
 
                             <li>
