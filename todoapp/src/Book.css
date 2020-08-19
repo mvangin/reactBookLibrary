@@ -21,11 +21,12 @@
 #deleteButton {
     background: rgba(255, 0, 0, 0.699);
     color: white;
-    padding: 8px 8px;
+    padding: 9px 9px;
     border: solid black 1px;
     border-radius: 5px;
     font-size: 20px;
     cursor: pointer;
+    margin-bottom:-13px;
 
 }
 

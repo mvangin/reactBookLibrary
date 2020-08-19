@@ -41,14 +41,11 @@ function App() {
 
   //handle delete here thats passed down to Todo. use map and key and delete and key index
   function handleRead(index) {
-    const updatedBooks = booksData.map((item, Itemindex) => {
+    const updatedBooks = booksData.forEach((item, Itemindex) => {
       if (Itemindex === index) {
         //item.isRead = !item.isRead
         db.collection('bookLibrary').doc(item.id).update({isRead: !item.isRead})
         return item
-      } else {
-        return item
-
       }
     })
 
