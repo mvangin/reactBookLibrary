@@ -1,21 +1,23 @@
-import React from "react"
+import React, { useContext } from "react"
 import Book from "./Book"
 import "./BookList.css"
+import { ActionContext } from "./HelperFuncs"
 
-class BookList extends React.Component {
+function BookList() {
 
+    const { booksData, handleRead, handleDelete } = useContext(ActionContext)
 
-    render() {
-        const bookItems = this.props.booksData.map((item, key) => {
-            console.log(key)
-            return <Book title={item.title} author={item.author} genre={item.genre} pages={item.pages} isRead={item.isRead} key={key} index={key} handleRead={this.props.handleRead} handleDelete={this.props.handleDelete} />   
-        })
-        return (
-            <div id="library">
-                {bookItems}
-            </div>
-        )
-    }
+    const bookItems = booksData.map((item, key) => {
+        console.log(key)
+        return <Book title={item.title} author={item.author} genre={item.genre} pages={item.pages} isRead={item.isRead} key={key} index={key} handleRead={handleRead} handleDelete={handleDelete} />
+    })
+
+    return (
+        <div id="library">
+            {bookItems}
+        </div>
+    )
+
 }
 
 
