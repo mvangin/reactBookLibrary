@@ -9,14 +9,19 @@ function HelperFuncs({children}) {
 
   const [booksData, setBooksData] = useState([]);
 
+
+
   useEffect(() => {
     //this code here fires when app loads
-   
+
     db.collection('bookLibrary').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
       const data = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id}))
       console.log(data)
       setBooksData(data)
     })
+    let userId = firebase.auth().getUid();  
+    console.log(userId)
+
   }, [])
 
   function addBook(newBook) {
