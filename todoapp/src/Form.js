@@ -1,5 +1,6 @@
 import React from "react"
 import "./Form.css"
+import { auth } from "./firebase"
 
 
 class Form extends React.Component {
@@ -20,6 +21,7 @@ class Form extends React.Component {
     }
 
     handleSubmit(e) {
+        const displayName = auth.currentUser.displayName
         e.preventDefault()
         if (this.state.title === "" || this.state.author === "" || this.state.genre === ""
             || this.state.pagse === "") {
@@ -28,7 +30,8 @@ class Form extends React.Component {
 
         const newBook = {
             title: this.state.title, author: this.state.author,
-            genre: this.state.genre, pages: this.state.pages, isRead: false
+            genre: this.state.genre, pages: this.state.pages, isRead: false, postedBy: displayName
+
         }
         this.props.addBook(newBook)
         this.handleDisplay()

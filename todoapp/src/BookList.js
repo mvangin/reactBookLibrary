@@ -17,7 +17,7 @@ function BookList({history}) {
 
     const bookItems = booksData.map((item, key) => {
         console.log(key)
-        return <Book title={item.title} author={item.author} genre={item.genre} pages={item.pages} isRead={item.isRead} key={key} index={key} handleRead={handleRead} handleDelete={handleDelete} />
+        return <Book title={item.title} author={item.author} genre={item.genre} pages={item.pages} isRead={item.isRead} postedBy={item.postedBy} key={key} index={key} handleRead={handleRead} handleDelete={handleDelete} />
     })
 
     async function handleLogout() {
@@ -31,7 +31,7 @@ function BookList({history}) {
                 <Form addBook={addBook} />
 
                 <button id="signOutButton" onClick={handleLogout}> Sign out </button>
-                
+
                 <div id="library">
                     {bookItems}
                 </div>

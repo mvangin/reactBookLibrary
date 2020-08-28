@@ -3,7 +3,7 @@ import { auth } from "./firebase"
 import { withRouter, Link } from "react-router-dom"
 
 function Register({ history }) {
-
+    const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [repeatPassword, setRepeatPassword] = useState("")
@@ -12,7 +12,11 @@ function Register({ history }) {
         e.preventDefault();
         if (password === repeatPassword) {
             try {
-                await auth.createUserWithEmailAndPassword(email, password);
+                await auth.createUserWithEmailAndPassword(email, password).then(credential => {
+                    credential.user.updateProfile({
+                        displayName: name
+                    })
+                })
                 history.push("/bookList")
             } catch (error) {
                 alert(error)
@@ -26,6 +30,9 @@ function Register({ history }) {
     return (
 
         <form>
+            <p> Name: </p>
+            <input value={name} type="name" onChange={(e) => setName(e.target.value)} />
+
             <p> Email: </p>
             <input value={email} type="email" onChange={(e) => setEmail(e.target.value)} />
 
