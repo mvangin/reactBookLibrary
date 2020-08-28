@@ -19,17 +19,15 @@ function HelperFuncs({children}) {
       console.log(data)
       setBooksData(data)
     })
-    let userId = firebase.auth().getUid();  
-    console.log(userId)
+
 
   }, [])
 
   function addBook(newBook) {
-    let user = firebase.auth().currentUser;
     let newData = [...booksData, newBook]
     db.collection('bookLibrary').add(
       {
-        ...newBook, timestamp: firebase.firestore.FieldValue.serverTimestamp(), userID: user.uid
+        ...newBook, timestamp: firebase.firestore.FieldValue.serverTimestamp()
       })
 
   }
