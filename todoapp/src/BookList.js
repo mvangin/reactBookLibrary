@@ -17,7 +17,7 @@ function BookList({history}) {
 
     const bookItems = booksData.map((item, key) => {
         console.log(key)
-        return <Book title={item.title} author={item.author} genre={item.genre} pages={item.pages} isRead={item.isRead} postedBy={item.postedBy} key={key} index={key} handleRead={handleRead} handleDelete={handleDelete} />
+        return <Book title={item.title} author={item.author} genre={item.genre} pages={item.pages} isRead={item.isRead}  postedBy={item.postedBy} key={key} index={key} handleRead={handleRead} handleDelete={handleDelete} />
     })
 
     async function handleLogout() {

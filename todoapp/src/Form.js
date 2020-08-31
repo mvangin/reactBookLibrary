@@ -13,7 +13,8 @@ class Form extends React.Component {
             genre: "",
             pages: "",
             isRead: false,
-            formDisplay: false
+            formDisplay: false,
+            totalReads: 0
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -30,7 +31,7 @@ class Form extends React.Component {
 
         const newBook = {
             title: this.state.title, author: this.state.author,
-            genre: this.state.genre, pages: this.state.pages, isRead: false, postedBy: displayName
+            genre: this.state.genre, pages: this.state.pages, isRead: false, totalReads: this.state.totalReads, postedBy: displayName
 
         }
         this.props.addBook(newBook)
@@ -51,7 +52,6 @@ class Form extends React.Component {
         this.setState({ author: "" })
         this.setState({ genre: "" })
         this.setState({ pages: "" })
-        this.setState({ isRead: false })
     }
 
     render() {
