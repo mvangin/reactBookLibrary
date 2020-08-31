@@ -4,16 +4,16 @@ import './index.css';
 import App from './App';
 import { HelperFuncs } from "./HelperFuncs"
 import { BrowserRouter as Router } from "react-router-dom"
-import {AuthContextProvider} from "./Auth"
+import { AuthContextProvider } from "./Auth"
 
 
 ReactDOM.render(
   <Router>
-    <AuthContextProvider>
-      <HelperFuncs>
+    <HelperFuncs>
+      <AuthContextProvider>
         <App />
-      </HelperFuncs>
-    </AuthContextProvider>
+      </AuthContextProvider>
+    </HelperFuncs>
   </Router>,
   document.getElementById('root')
 

@@ -7,19 +7,14 @@ import './Login.css'
 function Login({ history }) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    console.log(email, password)
+
 
     async function handleSignIn(e) {
         e.preventDefault();
-        try {
-            await auth.signInWithEmailAndPassword(email, password);
-        } catch (error) {
-            alert(error.message)
-        }
+        await auth.signInWithEmailAndPassword(email, password).catch(error => alert(error.message));
     }
 
     const currentUser = useContext(AuthContext)
-    console.log(currentUser)
 
     if (currentUser) {
         return <Redirect to="/bookList" />
@@ -30,10 +25,10 @@ function Login({ history }) {
             <h1> Please Log In Below</h1>
             <form>
                 <p> Email: </p>
-                <input value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
                 <p> Password:  </p>
-                <input value={password} onChange={(e) => setPassword(e.target.value)} />
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
                 <br />
                 <br />

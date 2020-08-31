@@ -8,27 +8,21 @@ function Register({ history }) {
     const [password, setPassword] = useState("")
     const [repeatPassword, setRepeatPassword] = useState("")
 
-    async function handleRegister(e) {
+    function handleRegister(e) {
         e.preventDefault();
         if (password === repeatPassword) {
-            try {
-                await auth.createUserWithEmailAndPassword(email, password).then(credential => {
-                    credential.user.updateProfile({
-                        displayName: name
-                    })
+            auth.createUserWithEmailAndPassword(email, password).then(credential => {
+                credential.user.updateProfile({
+                    displayName: name
                 })
                 history.push("/bookList")
-            } catch (error) {
-                alert(error)
-            }
+            }).catch(error => alert(error))
         } else {
             alert("passwords do not match")
         }
     }
 
-
     return (
-
         <form>
             <p> Name: </p>
             <input value={name} type="name" onChange={(e) => setName(e.target.value)} />
@@ -37,10 +31,10 @@ function Register({ history }) {
             <input value={email} type="email" onChange={(e) => setEmail(e.target.value)} />
 
             <p> Create Password:  </p>
-            <input value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 
             <p> Repeat Password:  </p>
-            <input value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} />
+            <input type="password" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} />
             <br />
             <br />
 
