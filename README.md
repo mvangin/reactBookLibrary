@@ -1,2 +1,1 @@
-# reactTodoApp_capstone
-BookLibrary project published to github pages, using local storage. Published at: https://mvangin.github.io/reactBookLibrary/
+Used React and local storage to create a booklibrary. Published to github pages at: https://mvangin.github.io/reactBookLibrary/
