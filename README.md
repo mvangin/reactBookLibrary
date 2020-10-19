@@ -1,2 +1,3 @@
-Used React and local storage to create a booklibrary. Published to github pages at: https://mvangin.github.io/reactBookLibrary/
+Used React and Firebase to create book library that different users are able to create accounts for and save data on Firebase server. Published using Firehosting at: https://booklibrary-cp.web.app/bookList
+
 
