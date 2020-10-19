@@ -1,22 +1,48 @@
-import React from "react"
+import React, { useContext } from "react"
 import Book from "./Book"
 import "./BookList.css"
+import { ActionContext } from "./HelperFuncs"
+import { Redirect, withRouter} from "react-router-dom"
+import { AuthContext } from "./Auth"
+import {auth} from "./firebase"
+import Form from "./Form"
 
-class BookList extends React.Component {
+function BookList({history}) {
+
+    const { booksData, handleRead, handleDelete, renderDatabase} = useContext(ActionContext)
+
+    const { addBook } = useContext(ActionContext)
+
+    const currentUser = useContext(AuthContext)
 
 
-    render() {
-        const bookItems = this.props.booksData.map((item, key) => {
-            console.log(key)
-            return <Book title={item.title} author={item.author} genre={item.genre} pages={item.pages} isRead={item.isRead} key={key} index={key} handleRead={this.props.handleRead} handleDelete={this.props.handleDelete} />   
-        })
-        return (
-            <div id="library">
-                {bookItems}
-            </div>
-        )
+    const bookItems = booksData.map((item, key) => {
+        return <Book title={item.title} author={item.author} genre={item.genre} pages={item.pages} isRead={item.isRead}  postedBy={item.postedBy} key={key} index={key} handleRead={handleRead} handleDelete={handleDelete} />
+    })
+
+    async function handleLogout() {
+        await auth.signOut();
+        renderDatabase([]);
+        history.push("/login");
     }
+
+    return (
+        currentUser ? (
+            <>
+                <Form addBook={addBook} />
+
+                <button id="signOutButton" onClick={handleLogout}> Sign out </button>
+
+                <div id="library">
+                    {bookItems}
+                </div>
+            </>
+        ) : (
+                <Redirect to="/login"></Redirect>
+            )
+    )
+
 }
 
 
-export default BookList
+export default withRouter(BookList)

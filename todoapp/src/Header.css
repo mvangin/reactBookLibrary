@@ -2,11 +2,25 @@
 #header{
     font-family: 'Cinzel', serif;
     text-align: center;
-    font-size: 50px;
-    padding: 30px;
+    font-size: 20px;
+    padding:10px;
     border-bottom: solid rgb(99, 97, 97) 5px;
     margin-bottom: 20px;
+    margin-top: 0px;
     background:#008CBA;
     color: white;
+    
+}
+
+#links {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 5px;
+    border: 1px solid grey;
+    padding: 8px;
+    border-radius: 5px;
     
 }

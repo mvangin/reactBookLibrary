@@ -1,9 +1,14 @@
 import React from "react"
 import "./Header.css"
 
+
 function Header() {
     return (
-        <h1 id="header"> Pocket Library </h1>
+        <>
+            <div id="header">
+                <h1 id=""> Pocket Library Book Club </h1>
+            </div>
+        </>
     )
 }
 
